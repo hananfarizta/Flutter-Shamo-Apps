@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shamo/models/user_model.dart';
+import 'package:shamo/providers/auth_provider.dart';
 import 'package:shamo/theme.dart';
 
 class EditProfilePage extends StatelessWidget {
-  const EditProfilePage({Key? key}) : super(key: key);
+  const EditProfilePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    AuthProvider authProvider = Provider.of<AuthProvider>(context);
+    UserModel user = authProvider.user;
+
     header() {
       return AppBar(
         backgroundColor: bgColor1,
@@ -44,7 +50,7 @@ class EditProfilePage extends StatelessWidget {
             TextFormField(
               style: primaryTextStyle,
               decoration: InputDecoration(
-                  hintText: 'Dyah Puspa Widyaningrum',
+                  hintText: user.name,
                   hintStyle: primaryTextStyle,
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: subtitleColor))),
@@ -67,7 +73,7 @@ class EditProfilePage extends StatelessWidget {
             TextFormField(
               style: primaryTextStyle,
               decoration: InputDecoration(
-                  hintText: '@haaneeeng',
+                  hintText: '@${user.username}',
                   hintStyle: primaryTextStyle,
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: subtitleColor))),
@@ -90,7 +96,7 @@ class EditProfilePage extends StatelessWidget {
             TextFormField(
               style: primaryTextStyle,
               decoration: InputDecoration(
-                  hintText: 'haningdyahpuspa@gmail.com',
+                  hintText: user.email,
                   hintStyle: primaryTextStyle,
                   enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: subtitleColor))),
@@ -111,10 +117,11 @@ class EditProfilePage extends StatelessWidget {
               width: 100,
               height: 100,
               margin: EdgeInsets.only(top: defaultMargin),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      image: AssetImage('assets/image_profile.png'))),
+                      fit: BoxFit.fill,
+                      image: NetworkImage(user.profilePhotoUrl))),
             ),
             nameInput(),
             usernameInput(),

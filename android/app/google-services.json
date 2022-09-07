@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "229830625509",
+    "project_id": "shamo-40cad",
+    "storage_bucket": "shamo-40cad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229830625509:android:790115f6ad9ffbc880ac0c",
+        "android_client_info": {
+          "package_name": "com.hananfarizta.shamo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229830625509-lidd1ghg0ibnqmq6h3hp2dinihtd7qvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYcrQnbvr_gvcLmMt3drjv2ksfemzLeEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229830625509-lidd1ghg0ibnqmq6h3hp2dinihtd7qvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
